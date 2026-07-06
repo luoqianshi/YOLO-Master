@@ -1,0 +1,161 @@
+/Users/gatilin/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+================================================================================
+PEFT Planner + Training Validation Report
+================================================================================
+
+
+========================================
+Testing RT-DETR-l
+========================================
+[Part A] Architecture Fingerprint:
+  φ_attn  = 0.8500
+  φ_text  = 0.0000
+  φ_dw    = 0.2213
+  φ_group = 0.0000
+  φ_linear= 0.3838
+[Planner] Architecture fingerprint: φ_attn=0.850, φ_text=0.000, φ_dw=0.221, φ_group=0.000, φ_linear=0.384
+[Part A] Planner Decision: REFUSE
+  predicted ΔmAP = -0.6000
+  refusal reason = RT-DETR-like architecture (φ_attn=0.85): LoRA-family variants destabilize attention-heavy backbones. Use Full-SFT instead.
+[Part A] Decision is REFUSE — verifying apply_lora returns unmodified...
+[Planner] Architecture fingerprint: φ_attn=0.850, φ_text=0.000, φ_dw=0.221, φ_group=0.000, φ_linear=0.384
+WARNING ⚠️ [Planner] REFUSE — RT-DETR-like architecture (φ_attn=0.85): LoRA-family variants destabilize attention-heavy backbones. Use Full-SFT instead. (predicted ΔmAP=-0.600). Falling back to full-model fine-tuning.
+  Original adapter params: 0
+  Result adapter params:   0
+  Total params unchanged:  True
+  Unmodified check: ✅ PASS
+[Part B] Running Full-SFT (lora_r=0) smoke test on COCO128...
+New https://pypi.org/project/ultralytics/8.4.87 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.240 🚀 Python-3.9.6 torch-2.8.0 MPS (Apple M1 Pro)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=True, augment=False, auto_augment=randaugment, batch=4, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, cluster=False, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=True, cutmix=0.0, data=coco128.yaml, degrees=0.0, deterministic=True, device=mps, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, end2end=None, epochs=1, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=320, int8=False, iou=0.7, iou_type=iou, keras=False, kobj=1.0, line_width=None, lora_adapter_dir=lora_adapter, lora_allow_depthwise=False, lora_allow_rtdetr_dora=False, lora_alpha=32, lora_alpha_warmup=3, lora_auto_r_ratio=0.0, lora_backend=auto, lora_beta1=0.85, lora_beta2=0.85, lora_bias=none, lora_boft_block_num=0, lora_boft_block_size=2, lora_boft_n_butterfly_factor=2, lora_delta_t=1, lora_dropout=0.05, lora_dropout_end=0.15, lora_dropout_start_ratio=0.3, lora_exclude_modules=None, lora_few_shot_adaptive_rank=True, lora_few_shot_adaptive_temperature=False, lora_few_shot_curriculum_sampling=False, lora_few_shot_distill_layers=None, lora_few_shot_distill_schedule=cosine, lora_few_shot_distill_weight=0.5, lora_few_shot_distill_weight_max=1.0, lora_few_shot_distill_weight_min=0.1, lora_few_shot_dropconnect=0.1, lora_few_shot_dropconnect_max=0.3, lora_few_shot_dropconnect_min=0.0, lora_few_shot_dropconnect_schedule=cosine, lora_few_shot_ema_decay=0.999, lora_few_shot_gradient_importance_weighted=False, lora_few_shot_hierarchical_distill=False, lora_few_shot_hook_cache=True, lora_few_shot_layerwise_rank=False, lora_few_shot_mode=False, lora_few_shot_rank_budget=0.5, lora_few_shot_response_distill=False, lora_few_shot_response_distill_weight=0.3, lora_few_shot_teacher=None, lora_few_shot_use_ema_teacher=False, lora_few_shot_variational_rank=False, lora_freeze_bn=False, lora_from_layer=None, lora_gradient_checkpointing=True, lora_hra_apply_gs=False, lora_include_attention=False, lora_include_head=False, lora_include_moe=False, lora_init_lora_weights=True, lora_init_r=12, lora_kernels=None, lora_last_n=None, lora_layer_decay=0.85, lora_lr_mult=2.0, lora_min_channels=0, lora_oft_block_share=False, lora_oft_block_size=0, lora_oft_coft=False, lora_oft_eps=6e-05, lora_only_3x3=False, lora_only_backbone=False, lora_orth_reg_weight=0.5, lora_ortho_frequency=10, lora_ortho_weight=0.5, lora_planner_enabled=False, lora_quantization=none, lora_r=0, lora_save_adapters=True, lora_skip_stem=False, lora_target_modules=None, lora_target_r=8, lora_tfinal=0, lora_tinit=0, lora_to_layer=None, lora_total_step=0, lora_type=lora, lora_use_dora=False, lora_use_rslora=True, lora_variant=lora, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, moa_local_window_size=7, moa_mot_min_temperature=0.3, moa_mot_temperature_factor=0.97, mode=train, model=/Users/gatilin/PycharmProjects/YOLO-Master-v260703/rtdetr-l.pt, moe=0.3, moe_balance_loss=1.0, moe_collapse_threshold=0.8, moe_expert_warmup_epochs=3, moe_noise_std=0.5, moe_num_experts=4, moe_router_lr_scale=0.5, moe_router_z_loss=0.1, moe_temperature=1.0, moe_top_k=2, moe_weight_threshold=0.01, molora_alpha=16, molora_balance_loss=0.01, molora_capacity_factor=1.0, molora_diversity_loss=0.0, molora_expert_dropout=0.0, molora_expert_init=default, molora_num_experts=0, molora_r=8, molora_router_type=linear, molora_router_z_loss=0.001, molora_share_moe_registry=True, molora_top_k=2, molora_use_rslora=True, molora_warmup_steps=0, momentum=0.937, mosaic=1.0, mot_balance_loss=0.01, mot_router_z_loss=0.01, mot_sparse_train=False, multi_scale=False, name=train15, nbs=64, nms=False, objectness_threshold=0.15, opset=None, optimize=False, optimizer=AdamW, overlap_mask=True, overlap_ratio=0.2, patience=100, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=None, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=/Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train15, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, sigma=0.1, simplify=True, single_cls=False, slice_size=640, source=None, sparse_sahi=False, sparse_sahi_fallback=True, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, weighted=False, workers=8, workspace=None
+WARNING ⚠️ no model scale passed. Assuming scale='l'.
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1     25248  ultralytics.nn.modules.block.HGStem          [3, 32, 48]                   
+  1                  -1  6    155072  ultralytics.nn.modules.block.HGBlock         [48, 48, 128, 3, 6]           
+  2                  -1  1      1408  ultralytics.nn.modules.conv.DWConv           [128, 128, 3, 2, 1, False]    
+  3                  -1  6    839296  ultralytics.nn.modules.block.HGBlock         [128, 96, 512, 3, 6]          
+  4                  -1  1      5632  ultralytics.nn.modules.conv.DWConv           [512, 512, 3, 2, 1, False]    
+  5                  -1  6   1695360  ultralytics.nn.modules.block.HGBlock         [512, 192, 1024, 5, 6, True, False]
+  6                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]
+  7                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]
+  8                  -1  1     11264  ultralytics.nn.modules.conv.DWConv           [1024, 1024, 3, 2, 1, False]  
+  9                  -1  6   6708480  ultralytics.nn.modules.block.HGBlock         [1024, 384, 2048, 5, 6, True, False]
+ 10                  -1  1    524800  ultralytics.nn.modules.conv.Conv             [2048, 256, 1, 1, None, 1, 1, False]
+ 11                  -1  1    789760  ultralytics.nn.modules.transformer.AIFI      [256, 1024, 8]                
+ 12                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14                   7  1    262656  ultralytics.nn.modules.conv.Conv             [1024, 256, 1, 1, None, 1, 1, False]
+ 15            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 17                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              
+ 18                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 19                   3  1    131584  ultralytics.nn.modules.conv.Conv             [512, 256, 1, 1, None, 1, 1, False]
+ 20            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 22                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 23            [-1, 17]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 24                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 25                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 26            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 27                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 28        [21, 24, 27]  1   7466252  ultralytics.nn.modules.head.RTDETRDecoder    [80, [256, 256, 256]]         
+rt-detr-l summary: 465 layers, 32,970,476 parameters, 32,970,476 gradients, 108.3 GFLOPs
+
+Transferred 941/941 items from pretrained weights
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 141.9±57.0 MB/s, size: 46.0 KB)
+[K[34m[1mtrain: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 44.7Mit/s 0.0s[K[34m[1mtrain: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 1.9Mit/s 0.0s
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 164.6±72.3 MB/s, size: 56.4 KB)
+[K[34m[1mval: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 33.6Mit/s 0.0s[K[34m[1mval: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 2.1Mit/s 0.0s
+Plotting labels to /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train15/labels.jpg... 
+[LoRA] Disabled (r=0).
+[34m[1moptimizer:[0m AdamW(lr=0.01, momentum=0.937) with parameter groups 143 bn(decay=0), 206 wt(decay=0.0005), 226 bias(decay=0), 0 router(lr=0.5x)
+Image sizes 320 train, 320 val
+Using 0 dataloader workers
+Logging results to [1m/Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train15[0m
+Starting training for 1 epochs...
+
+      Epoch    GPU_mem  giou_loss   cls_loss    l1_loss  Instances       Size
+[K: 0% ──────────── 0/32  5.9s
+  ❌ Full-SFT FAILURE on MPS: The operator 'aten::grid_sampler_2d_backward' is not currently implemented for the MPS device. If you want this op to be considered for addition please comment on https://github.com/pytorch/pytorch/issues/141287 and mention use-case, that resulted in missing op as well as commit hash a1cb3cc05d46d198467bebbb6e8fba50a325d4e7. As a temporary fix, you can set the environment variable `PYTORCH_ENABLE_MPS_FALLBACK=1` to use the CPU as a fallback for this op. WARNING: this will be slower than running natively on MPS.
+    Traceback (most recent call last):
+      File "/Users/gatilin/PycharmProjects/YOLO-Master-v260703/scripts/verify_planner_YOLO11s Planner+training validation.py", line 267, in main
+        results = yolo.train(
+      File "/Users/gatilin/PycharmProjects/YOLO-Master-v260703/ultralytics/engine/model.py", line 858, in train
+        self.trainer.train()
+      File "/Users/gatilin/PycharmProjects/YOLO-Master-v260703/ultralytics/engine/trainer.py", line 294, in train
+        self._do_train()
+      File "/Users/gatilin/PycharmProjects/YOLO-Master-v260703/ultralytics/engine/trainer.py", line 958, in _do_train
+        self.scaler.scale(self.loss).backward()
+      File "/Users/gatilin/Library/Python/3.9/lib/python/site-packages/torch/_tensor.py", line 647, in backward
+        torch.autograd.backward(
+      File "/Users/gatilin/Library/Python/3.9/lib/python/site-packages/torch/autograd/__init__.py", line 354, in backward
+        _engine_run_backward(
+      File "/Users/gatilin/Library/Python/3.9/lib/python/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+        return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+    NotImplementedError: The operator 'aten::grid_sampler_2d_backward' is not currently implemented for the MPS device. If you want this op to be considered for addition please comment on https://github.com/pytorch/pytorch/issues/141287 and mention use-case, that resulted in missing op as well as commit hash a1cb3cc05d46d198467bebbb6e8fba50a325d4e7. As a temporary fix, you can set the environment variable `PYTORCH_ENABLE_MPS_FALLBACK=1` to use the CPU as a fallback for this op. WARNING: this will be slower than running natively on MPS.
+  Retrying Full-SFT with CPU...
+New https://pypi.org/project/ultralytics/8.4.87 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.240 🚀 Python-3.9.6 torch-2.8.0 CPU (Apple M1 Pro)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=True, augment=False, auto_augment=randaugment, batch=4, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, cluster=False, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=True, cutmix=0.0, data=coco128.yaml, degrees=0.0, deterministic=True, device=cpu, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, end2end=None, epochs=1, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=320, int8=False, iou=0.7, iou_type=iou, keras=False, kobj=1.0, line_width=None, lora_adapter_dir=lora_adapter, lora_allow_depthwise=False, lora_allow_rtdetr_dora=False, lora_alpha=32, lora_alpha_warmup=3, lora_auto_r_ratio=0.0, lora_backend=auto, lora_beta1=0.85, lora_beta2=0.85, lora_bias=none, lora_boft_block_num=0, lora_boft_block_size=2, lora_boft_n_butterfly_factor=2, lora_delta_t=1, lora_dropout=0.05, lora_dropout_end=0.15, lora_dropout_start_ratio=0.3, lora_exclude_modules=None, lora_few_shot_adaptive_rank=True, lora_few_shot_adaptive_temperature=False, lora_few_shot_curriculum_sampling=False, lora_few_shot_distill_layers=None, lora_few_shot_distill_schedule=cosine, lora_few_shot_distill_weight=0.5, lora_few_shot_distill_weight_max=1.0, lora_few_shot_distill_weight_min=0.1, lora_few_shot_dropconnect=0.1, lora_few_shot_dropconnect_max=0.3, lora_few_shot_dropconnect_min=0.0, lora_few_shot_dropconnect_schedule=cosine, lora_few_shot_ema_decay=0.999, lora_few_shot_gradient_importance_weighted=False, lora_few_shot_hierarchical_distill=False, lora_few_shot_hook_cache=True, lora_few_shot_layerwise_rank=False, lora_few_shot_mode=False, lora_few_shot_rank_budget=0.5, lora_few_shot_response_distill=False, lora_few_shot_response_distill_weight=0.3, lora_few_shot_teacher=None, lora_few_shot_use_ema_teacher=False, lora_few_shot_variational_rank=False, lora_freeze_bn=False, lora_from_layer=None, lora_gradient_checkpointing=True, lora_hra_apply_gs=False, lora_include_attention=False, lora_include_head=False, lora_include_moe=False, lora_init_lora_weights=True, lora_init_r=12, lora_kernels=None, lora_last_n=None, lora_layer_decay=0.85, lora_lr_mult=2.0, lora_min_channels=0, lora_oft_block_share=False, lora_oft_block_size=0, lora_oft_coft=False, lora_oft_eps=6e-05, lora_only_3x3=False, lora_only_backbone=False, lora_orth_reg_weight=0.5, lora_ortho_frequency=10, lora_ortho_weight=0.5, lora_planner_enabled=False, lora_quantization=none, lora_r=0, lora_save_adapters=True, lora_skip_stem=False, lora_target_modules=None, lora_target_r=8, lora_tfinal=0, lora_tinit=0, lora_to_layer=None, lora_total_step=0, lora_type=lora, lora_use_dora=False, lora_use_rslora=True, lora_variant=lora, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, moa_local_window_size=7, moa_mot_min_temperature=0.3, moa_mot_temperature_factor=0.97, mode=train, model=/Users/gatilin/PycharmProjects/YOLO-Master-v260703/rtdetr-l.pt, moe=0.3, moe_balance_loss=1.0, moe_collapse_threshold=0.8, moe_expert_warmup_epochs=3, moe_noise_std=0.5, moe_num_experts=4, moe_router_lr_scale=0.5, moe_router_z_loss=0.1, moe_temperature=1.0, moe_top_k=2, moe_weight_threshold=0.01, molora_alpha=16, molora_balance_loss=0.01, molora_capacity_factor=1.0, molora_diversity_loss=0.0, molora_expert_dropout=0.0, molora_expert_init=default, molora_num_experts=0, molora_r=8, molora_router_type=linear, molora_router_z_loss=0.001, molora_share_moe_registry=True, molora_top_k=2, molora_use_rslora=True, molora_warmup_steps=0, momentum=0.937, mosaic=1.0, mot_balance_loss=0.01, mot_router_z_loss=0.01, mot_sparse_train=False, multi_scale=False, name=train16, nbs=64, nms=False, objectness_threshold=0.15, opset=None, optimize=False, optimizer=AdamW, overlap_mask=True, overlap_ratio=0.2, patience=100, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=None, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=/Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train16, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, sigma=0.1, simplify=True, single_cls=False, slice_size=640, source=None, sparse_sahi=False, sparse_sahi_fallback=True, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, weighted=False, workers=8, workspace=None
+WARNING ⚠️ no model scale passed. Assuming scale='l'.
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1     25248  ultralytics.nn.modules.block.HGStem          [3, 32, 48]                   
+  1                  -1  6    155072  ultralytics.nn.modules.block.HGBlock         [48, 48, 128, 3, 6]           
+  2                  -1  1      1408  ultralytics.nn.modules.conv.DWConv           [128, 128, 3, 2, 1, False]    
+  3                  -1  6    839296  ultralytics.nn.modules.block.HGBlock         [128, 96, 512, 3, 6]          
+  4                  -1  1      5632  ultralytics.nn.modules.conv.DWConv           [512, 512, 3, 2, 1, False]    
+  5                  -1  6   1695360  ultralytics.nn.modules.block.HGBlock         [512, 192, 1024, 5, 6, True, False]
+  6                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]
+  7                  -1  6   2055808  ultralytics.nn.modules.block.HGBlock         [1024, 192, 1024, 5, 6, True, True]
+  8                  -1  1     11264  ultralytics.nn.modules.conv.DWConv           [1024, 1024, 3, 2, 1, False]  
+  9                  -1  6   6708480  ultralytics.nn.modules.block.HGBlock         [1024, 384, 2048, 5, 6, True, False]
+ 10                  -1  1    524800  ultralytics.nn.modules.conv.Conv             [2048, 256, 1, 1, None, 1, 1, False]
+ 11                  -1  1    789760  ultralytics.nn.modules.transformer.AIFI      [256, 1024, 8]                
+ 12                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14                   7  1    262656  ultralytics.nn.modules.conv.Conv             [1024, 256, 1, 1, None, 1, 1, False]
+ 15            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 17                  -1  1     66048  ultralytics.nn.modules.conv.Conv             [256, 256, 1, 1]              
+ 18                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 19                   3  1    131584  ultralytics.nn.modules.conv.Conv             [512, 256, 1, 1, None, 1, 1, False]
+ 20            [-2, -1]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 22                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 23            [-1, 17]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 24                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 25                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 26            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 27                  -1  3   2232320  ultralytics.nn.modules.block.RepC3           [512, 256, 3]                 
+ 28        [21, 24, 27]  1   7466252  ultralytics.nn.modules.head.RTDETRDecoder    [80, [256, 256, 256]]         
+rt-detr-l summary: 465 layers, 32,970,476 parameters, 32,970,476 gradients, 108.3 GFLOPs
+
+Transferred 941/941 items from pretrained weights
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 79.0±45.9 MB/s, size: 50.9 KB)
+[K[34m[1mtrain: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 26.8Mit/s 0.0s[K[34m[1mtrain: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 1.1Mit/s 0.0s
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 133.5±69.9 MB/s, size: 52.5 KB)
+[K[34m[1mval: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 25.6Mit/s 0.0s[K[34m[1mval: [0mScanning /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/datasets/coco128/labels/train2017.cache... 126 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 128/128 826.0Kit/s 0.0s
+Plotting labels to /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train16/labels.jpg... 
+[LoRA] Disabled (r=0).
+[34m[1moptimizer:[0m AdamW(lr=0.01, momentum=0.937) with parameter groups 143 bn(decay=0), 206 wt(decay=0.0005), 226 bias(decay=0), 0 router(lr=0.5x)
+Image sizes 320 train, 320 val
+Using 0 dataloader workers
+Logging results to [1m/Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train16[0m
+Starting training for 1 epochs...
+
+      Epoch    GPU_mem  giou_loss   cls_loss    l1_loss  Instances       Size
+[K        1/1         0G     0.6429      1.181     0.3299         28        320: 0% ──────────── 0/32  5.1s[K        1/1         0G      1.326      1.143      3.031         46        320: 3% ──────────── 1/32 19.4s/it 10.9s<10:01[K        1/1         0G       1.53     0.7974      3.446         84        320: 6% ╸─────────── 2/32 10.4s/it 15.9s<5:11[K        1/1         0G      1.615     0.7079       2.92         70        320: 9% ━─────────── 3/32 8.3s/it 21.5s<3:60[K        1/1         0G       1.57     0.7554      2.501         46        320: 12% ━─────────── 4/32 7.2s/it 27.1s<3:23[K        1/1         0G      1.565     0.7434      2.253         62        320: 16% ━╸────────── 5/32 7.0s/it 33.6s<3:10[K        1/1         0G      1.576     0.7161      2.057         48        320: 19% ━━────────── 6/32 6.6s/it 39.5s<2:52[K        1/1         0G       1.59     0.6991      1.912         48        320: 22% ━━╸───────── 7/32 6.4s/it 45.4s<2:40[K        1/1         0G      1.555     0.7245      1.814         36        320: 25% ━━━───────── 8/32 6.1s/it 50.8s<2:25[K        1/1         0G      1.527     0.7475      1.723         35        320: 28% ━━━───────── 9/32 5.7s/it 55.9s<2:12[K        1/1         0G      1.528     0.7529      1.654         25        320: 31% ━━━╸──────── 10/32 5.7s/it 1:01<2:04[K        1/1         0G      1.517     0.7913      1.609         15        320: 34% ━━━━──────── 11/32 5.6s/it 1:07<1:57[K        1/1         0G      1.549      0.783      1.551         70        320: 38% ━━━━──────── 12/32 5.6s/it 1:12<1:52[K        1/1         0G      1.547     0.8015      1.518         28        320: 41% ━━━━╸─────── 13/32 5.2s/it 1:17<1:39[K        1/1         0G      1.526     0.8322      1.467         18        320: 44% ━━━━━─────── 14/32 5.5s/it 1:23<1:40[K        1/1         0G      1.508     0.8375      1.425         32        320: 47% ━━━━━╸────── 15/32 5.7s/it 1:29<1:36[K        1/1         0G      1.491     0.8544      1.389         56        320: 50% ━━━━━━────── 16/32 5.5s/it 1:34<1:28[K        1/1         0G      1.451     0.9105      1.357         18        320: 53% ━━━━━━────── 17/32 5.3s/it 1:39<1:19[K        1/1         0G       1.44      0.914      1.333         28        320: 56% ━━━━━━╸───── 18/32 5.4s/it 1:45<1:15[K        1/1         0G      1.442     0.9121      1.306         46        320: 59% ━━━━━━━───── 19/32 5.8s/it 1:52<1:15[K        1/1         0G      1.434     0.9135      1.272         47        320: 62% ━━━━━━━───── 20/32 6.0s/it 1:59<1:12[K        1/1         0G      1.436     0.9072       1.25         46        320: 66% ━━━━━━━╸──── 21/32 6.1s/it 2:05<1:07[K        1/1         0G      1.423     0.9219      1.225         33        320: 69% ━━━━━━━━──── 22/32 5.9s/it 2:10<59.2s[K        1/1         0G      1.434     0.9307      1.217         43        320: 72% ━━━━━━━━╸─── 23/32 6.1s/it 2:17<54.9s[K        1/1         0G      1.435     0.9242        1.2         26        320: 75% ━━━━━━━━━─── 24/32 5.9s/it 2:22<46.9s[K        1/1         0G      1.458     0.9051      1.187         43        320: 78% ━━━━━━━━━─── 25/32 6.0s/it 2:29<41.9s[K        1/1         0G      1.451     0.9099      1.172         36        320: 81% ━━━━━━━━━╸── 26/32 5.8s/it 2:34<35.0s[K        1/1         0G      1.464     0.8906       1.16         73        320: 84% ━━━━━━━━━━── 27/32 5.8s/it 2:40<29.2s[K        1/1         0G      1.457     0.8893       1.16         30        320: 88% ━━━━━━━━━━── 28/32 5.8s/it 2:46<23.4s[K        1/1         0G      1.464     0.8761       1.15         70        320: 91% ━━━━━━━━━━╸─ 29/32 5.8s/it 2:52<17.4s[K        1/1         0G      1.472     0.8609      1.142        168        320: 94% ━━━━━━━━━━━─ 30/32 5.7s/it 2:57<11.4s[K        1/1         0G      1.471     0.8585      1.131         59        320: 97% ━━━━━━━━━━━╸ 31/32 5.8s/it 3:03<5.8s[K        1/1         0G      1.471     0.8585      1.131         59        320: 100% ━━━━━━━━━━━━ 32/32 5.7s/it 3:03[K        1/1         0G      1.471     0.8585      1.131         59        320: 100% ━━━━━━━━━━━━ 32/32 5.7s/it 3:03
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 6% ╸─────────── 1/16 9.5s/it 2.9s<2:23[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 12% ━─────────── 2/16 6.2s/it 6.3s<1:27[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 19% ━━────────── 3/16 4.7s/it 9.3s<1:01[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 25% ━━━───────── 4/16 3.9s/it 12.1s<46.9s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 31% ━━━╸──────── 5/16 3.6s/it 15.2s<40.0s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 38% ━━━━──────── 6/16 3.4s/it 18.1s<33.9s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 44% ━━━━━─────── 7/16 3.6s/it 22.4s<32.5s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 50% ━━━━━━────── 8/16 3.2s/it 25.0s<25.9s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 56% ━━━━━━╸───── 9/16 3.3s/it 28.6s<23.3s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 62% ━━━━━━━───── 10/16 3.3s/it 31.8s<19.8s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 69% ━━━━━━━━──── 11/16 3.0s/it 34.3s<15.0s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 75% ━━━━━━━━━─── 12/16 2.8s/it 36.6s<11.0s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 81% ━━━━━━━━━╸── 13/16 2.8s/it 39.3s<8.3s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 88% ━━━━━━━━━━── 14/16 2.8s/it 42.2s<5.6s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 94% ━━━━━━━━━━━─ 15/16 2.8s/it 44.9s<2.8s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 16/16 3.0s/it 47.8s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 16/16 3.0s/it 47.8s
+                   all        128        929      3e-05    0.00336   1.85e-05   3.24e-06
+
+1 epochs completed in 0.065 hours.
+Optimizer stripped from /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train16/weights/last.pt, 66.5MB
+Optimizer stripped from /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train16/weights/best.pt, 66.5MB
+
+Validating /Users/gatilin/Downloads/.session_tmps/bed05d0f-229c-45d5-a6c5-2cc4abe4350e/YOLO-Master/runs/detect/train16/weights/best.pt...
+Ultralytics 8.3.240 🚀 Python-3.9.6 torch-2.8.0 CPU (Apple M1 Pro)
+rt-detr-l summary: 310 layers, 32,148,140 parameters, 0 gradients, 103.8 GFLOPs
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 6% ╸─────────── 1/16 9.5s/it 2.9s<2:23[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 12% ━─────────── 2/16 5.1s/it 5.3s<1:12[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 19% ━━────────── 3/16 4.6s/it 9.1s<1:00

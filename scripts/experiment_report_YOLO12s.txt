@@ -1,0 +1,26 @@
+================================================================================
+PEFT Planner + Training Validation Report
+================================================================================
+
+
+========================================
+Testing YOLO12s
+========================================
+[Part A] Architecture Fingerprint:
+  φ_attn  = 0.4500
+  φ_text  = 0.0000
+  φ_dw    = 0.1167
+  φ_group = 0.0000
+  φ_linear= 0.0000
+[Part A] Planner Decision: ADAPT
+  predicted ΔmAP = 0.0674
+  recommended rank = 8
+[Part A] Decision is ADAPT — applying LoRA...
+  Parameter Statistics:
+    Total params:     9,832,536
+    Trainable params: 1,397,272 (14.211%)
+    Frozen params:    8,435,264
+    Adapter params:   546,904 (5.562%)
+  Model ready for training: True
+[Part B] Running 1-epoch training smoke test on COCO128...
+  ✅ Training SUCCESS (elapsed: 256.2s)
