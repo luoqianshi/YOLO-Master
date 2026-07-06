@@ -1,0 +1,17 @@
+{
+  "coefficients": [
+    -0.31801349694240344,
+    -0.21977834148231704,
+    -0.0032859063103411294,
+    0.40997952104136587
+  ],
+  "r2": -2.136674190677061,
+  "lambda": 1.0,
+  "prior": [
+    0.02,
+    -0.05,
+    -0.02,
+    1.0
+  ],
+  "note": "4-dim ridge regression (phi_text dropped, collinear with other features)"
+}
